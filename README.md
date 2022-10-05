@@ -5,6 +5,9 @@ The purpose of this challenge was to alter a neural network to increase model pe
 When completing these two deliverables the model showed an accuracy of 0.725. In deliverables 3 and 4 the goal was to increase the model performance to 0.75. Although I was unable to achieve this goal I have outlined the steps I took in my attempt to increase the performance of the neural network model. 
 
 
+The image below shows the accuracy metric of the original neural network created in deliverable 2.
+![accuracy_original.png](/Resources/accuracy_original.png)
+
 
 ## Results: Using bulleted lists and images to support your answers, address the following questions. 
 ### Data Preprocessing
@@ -44,15 +47,28 @@ Unfortunately I was unable to create a neural network that reached the target pe
 To increase model performance I binned two columns, ‘INCOME_AMT’ and ‘ASK_AMT.’  
 The ‘INCOME_AMT’ column was reduced from 9 unique values to 7. The ‘ASK_AMT’ column was reduced from 8747 unique values to 6.
 
-I removed the variable ‘STATUS’ from the dataset. Out of the two possible Values, 0 and 1, 34294 datapoints has a ‘0’ in the ‘STATUS’ column and only 5 datapoints has a ‘1.’ I concluded that since such a large majority of datapoints had the same value, this variable did not introduce a significant variation in data and could be removed without negatively impacting the analysis. 
+The image below shows the amount of unique values in each column before binning.
+![unique_before.png](/Resources/unique_before.png)
+
+The next image shows the amount of unique values in each column after binning.
+![unique_after.png](/Resources/unique_after.png)
+
+I removed the variable ‘STATUS’ from the dataset. Out of 34299 datapoints, 34294 datapoints have a ‘0’ in the ‘STATUS’ column and only 5 datapoints has a ‘1.’ I concluded that since such a large majority of datapoints had the same value, this variable did not introduce a significant variation in data and could be removed without negatively impacting the analysis. 
 
 I also altered the amount of neurons, amount of hidden layers, and the activation functions used in the neural network. 
 The original neural network in file AlphabetSoupCharity.ipynb only consisted of 2 hidden layers, with 80 and 30 neurons respectively. Both of the hidden layers in the original neural network utilized the activation function ‘relu.’ 
+
 As seen previously in the “Neurons, layers, and activation functions” section, the neural network was altered to contain 3 hidden layers with 80, 30, and 10 neurons respectively. The activation function of the first hidden layer was changed to ‘linear.’   The output layer was not altered from the original neural network. 
+
+The image below shows the summary of the neural network created in deliverable 3.
+![nn_optimization.png](/Resources/nn_optimization.png)
+
 
 ## Summary and Recommendation:
 
-For the optimization deliverable I was unable to achieve the target performance of 0.75. The greatest accuracy I was able to achieve is 0.724. 
+For the optimization deliverable I was unable to achieve the target performance of 0.75. The greatest accuracy I was able to achieve is 0.724. The accuracy metric for the new neural network is pictured below. 
 
-Unfortunately I was unable to identify why I was unable to significantly increase the performance of this model. In the future I might suggest that the researcher gather more data, so we have a more diverse dataset to work with. 
+![accuracy_optimization.png](/Resources/accuracy_optimization.png)
+
+Unfortunately I was unable to identify how to significantly increase the performance of this model. In the future I might suggest that the researcher gather more data, so we have a more diverse dataset to work with. 
 When creating the neural network I would continue to try different model structures. It is possible that the model contained too many or too little neurons, or the activation functions used were not compatible with the data being analyzed. Additionally, I would suggest testing different optimizers in the output layer.
